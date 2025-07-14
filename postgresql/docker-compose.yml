@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgresql-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: development
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_password
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d
+    networks:
+      - postgres-network
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: postgresql-pgadmin
+    ports:
+      - "8080:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin_password
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - postgres
+    networks:
+      - postgres-network
+
+volumes:
+  postgres_data:
+  pgadmin_data:
+
+networks:
+  postgres-network:
+    driver: bridge
