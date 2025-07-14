@@ -15,6 +15,7 @@ A collection of Docker Compose templates for various technologies and use cases 
 
 ## Usage
 
+
 Each template is located in its own directory. To use a template:
 
 ```bash
@@ -22,10 +23,31 @@ cd <template-name>
 docker-compose up -d
 ```
 
+### Health Check Script
+
+You can use the `health-check.sh` script to check the status of all services in every template:
+
+```bash
+chmod +x health-check.sh
+./health-check.sh
+```
+
+The script will verify that Docker is running, check for running containers, and attempt to connect to the main service ports for each template. It uses `nc` (netcat) to check if the expected ports are open and responding.
+
+**Note:** Make sure Docker and docker-compose are installed and running before executing the script.
+
 ## Requirements
 
 - Docker Engine
 - Docker Compose v2.0+
+
+---
+
+## Health Check Script
+
+The `health-check.sh` script allows you to quickly check the health of all stack templates. It outputs the health status of each service in every available template directory (LAMP, ELK, WordPress, Redis, PostgreSQL).
+
+See the section above for usage instructions.
 
 ## Contributing
 
