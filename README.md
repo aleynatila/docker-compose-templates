@@ -4,14 +4,14 @@ A collection of Docker Compose templates for various technologies and use cases 
 
 ## Available Templates
 
-- **LAMP Stack** - Linux, Apache, MySQL, PHP
-- **MEAN Stack** - MongoDB, Express.js, Angular, Node.js
-- **ELK Stack** - Elasticsearch, Logstash, Kibana
-- **WordPress with MySQL** - WordPress and MySQL setup
-- **Redis with Monitoring** - Redis with RedisInsight
-- **PostgreSQL with pgAdmin** - PostgreSQL database with pgAdmin
-- **Nginx Load Balancer** - Nginx load balancer configuration
-- **Microservices Template** - Multi-service architecture example
+- **LAMP Stack** - Linux, Apache, MySQL, PHP with sample application
+- **ELK Stack** - Elasticsearch, Logstash, Kibana for log analysis
+- **WordPress** - WordPress with MySQL and phpMyAdmin
+- **Redis Stack** - Redis with RedisInsight and Redis Commander
+- **PostgreSQL** - PostgreSQL with pgAdmin and sample data
+- **MEAN Stack** - MongoDB, Express.js, Angular, Node.js (Coming Soon)
+- **Nginx Load Balancer** - Nginx load balancer configuration (Coming Soon)
+- **Microservices Template** - Multi-service architecture example (Coming Soon)
 
 ## Usage
 
